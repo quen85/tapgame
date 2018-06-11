@@ -1,0 +1,23 @@
+section{
+    max-width: 35rem;
+    margin: 4rem auto;
+}
+
+h2{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: .1rem solid rebeccapurple;
+    margin: 2rem 0 1rem 0;
+    padding: .5rem 1rem;
+    letter-spacing: .1rem;
+    cursor: pointer;
+    color: #663399;
+}
+
+app-login, app-register{
+    display: block;
+    background-color: #eee;
+    padding: 2rem 2rem 1rem;
+    margin-top: -1rem;
+}

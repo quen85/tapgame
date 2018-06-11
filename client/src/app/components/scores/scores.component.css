@@ -1,0 +1,58 @@
+section{
+    max-width: 35rem;
+    margin: 4rem auto;
+}
+
+header section {
+    max-width: 35rem;
+    margin: auto;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+    padding: 4rem 4rem 2rem 4rem;
+    margin-top: -2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    font-family: 'Bungee Inline',cursive;
+    color: #000;
+    line-height: 1;
+}
+
+header p{
+    font-size: 1rem;
+    margin: .5rem auto 1rem auto;
+    border-bottom: .1rem dotted #eee;
+    padding-bottom: .5rem;
+}
+
+header button{
+    padding: .5rem;
+    height: auto;
+    line-height: 1;
+    margin: 0 1rem;
+    background-color: #663399;
+    border-color: #663399;
+}
+
+ul{
+    padding: 0 2rem;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: .1rem dotted #eee;
+    margin-bottom: 2rem;
+}
+
+li span {
+    font-size: .6em;
+}

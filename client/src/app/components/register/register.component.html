@@ -1,0 +1,26 @@
+<form (submit)="handleSubmit()">
+  <fieldset>
+    <legend>About you</legend>
+
+    <label for="firstname">Firstname <span *ngIf="formError.firstname.error" [innerHTML]="formError.firstname.message"></span></label>
+    <input type="text" name="firstname" [(ngModel)]="formData.firstname">
+
+    <label for="lastname">Lastname <span *ngIf="formError.lastname.error" [innerHTML]="formError.lastname.message"></span></label>
+    <input type="text" name="lastname" [(ngModel)]="formData.lastname">
+  </fieldset>
+  <fieldset>
+    <legend>Login Informations</legend>
+
+    <label for="email">Email <span *ngIf="formError.email.error" [innerHTML]="formError.email.message"></span></label>
+    <input type="email" name="email" [(ngModel)]="formData.email">
+
+    <label for="password">Password <span *ngIf="formError.password.error" [innerHTML]="formError.password.message"></span></label>
+    <input type="password" name="password" [(ngModel)]="formData.password">
+  </fieldset>
+
+  <p class="termsAndCondition">
+    <input type="checkbox" name="terms" [(ngModel)]="formData.terms"> I accept the terms and conditions <span *ngIf="formError.terms.error" [innerHTML]="formError.terms.message"></span>
+  </p>
+
+  <button type="submit">Login</button>
+</form>

@@ -1,0 +1,48 @@
+section{
+    position: relative;
+    max-width: 35rem;
+    min-height: 41rem;
+    margin: 1rem auto 0 auto;
+}
+
+article:first-child img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+}
+
+article:first-child img.hide{
+    z-index: 0;
+}
+
+article:first-child img.show{
+    z-index: 1;
+}
+
+div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eee;
+    padding: 1rem;
+}
+
+aside{
+    position: relative;
+    height: 2rem;
+    background-color: #4b4b4b;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .1);
+    width: 0;
+    -webkit-transition: width 10s linear;
+    -moz-transition: width 10s linear;
+    -ms-transition: width 10s linear;
+    -o-transition: width 10s linear;
+    transition: width 10s linear;
+}
+
+aside.started{
+    width: 100%;
+}

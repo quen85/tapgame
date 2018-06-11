@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<section>
+    <article>
+        <h2 (click)="showLogin = !showLogin;showRegister = !showRegister;">Login</h2>
+        <app-login *ngIf="showLogin"></app-login>
+    </article>
+
+    <article>
+        <h2 (click)="showRegister = !showRegister;showLogin = !showLogin;">Register</h2>
+        <app-register *ngIf="showRegister"></app-register>
+    </article>
+</section>
