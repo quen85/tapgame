@@ -58,8 +58,9 @@ export class LoginComponent implements OnInit {
         .toPromise()
         .then((user: any) => {
       localStorage.setItem('token', user.token)
-      this.router.navigate(['me'])
-    })
+      localStorage.setItem('user', JSON.stringify(user))
+      this.router.navigate(['me']);
+    });
   }
 
   ngOnInit() {

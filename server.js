@@ -1,10 +1,9 @@
 let express = require('express')
 let port = 8080
+const passport = require('passport')
+
 let user = require('./api/models/User')
 let taps = require('./api/models/Tap')
-const passport = require('passport')
-const router = express.Router()
-let userController = require('./api/controllers/userController')
 
 let app = express()
 
@@ -31,6 +30,5 @@ let userRoutes = require('./api/routes/userRoutes')
 let tapRoutes = require('./api/routes/tapRoutes')
 app.use('/api/users', userRoutes);
 app.use('/api/taps', passport.authenticate('jwt', {session: false}), tapRoutes);
-
 
 app.listen(port, () => console.log('Le serveur est lancé sur le serveur' + port))

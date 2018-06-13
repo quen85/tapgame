@@ -12,25 +12,25 @@ export class ScoresComponent implements OnInit {
   scores: any
 
   constructor(private http: HttpClient, private router: Router) {
-    this.loadScores()
+    this.loadScores();
   }
 
   public loadScores = () => {
     const token = localStorage.getItem('token')
 
-    let headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    let options =  {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const options =  {
       headers: headers
     };
 
     this.http.get('http://localhost:8080/api/taps/', options)
         .toPromise()
-        .then((res) => {this.scores = res; console.log(this.scores)})
+        .then((res) => this.scores = res);
   }
 
   public logout = () => {
     localStorage.removeItem('token')
-    this.router.navigate((['']))
+    this.router.navigate((['']));
   }
 
   ngOnInit() {

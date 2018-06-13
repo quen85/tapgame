@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     const token = localStorage.getItem('token')
 
-    if(token)
-      this.router.navigate((['me']))
+    if (token)
+      this.router.navigate((['me']));
 
   }
 

@@ -16,30 +16,33 @@ export class TapgameComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {
     this.count = 0
     this.hasStarted = false
-    this.on = false
+    this.on = false;
   }
 
   public playGame = () => {
-    if(!this.count){
+    if(!this.count) {
       this.hasStarted = true
-      setTimeout(this.saveScore, 10000)
+      setTimeout(this.saveScore, 10000);
     }
     this.on = !this.on
-    this.count++
+    this.count++;
   }
 
   public saveScore = () => {
     const token = localStorage.getItem('token')
+    let user: any = localStorage.getItem('user')
+    user = JSON.parse(user)
+    user = user.user
 
-    let headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    let options =  {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const options =  {
       headers: headers
     };
 
-    const body = {score: this.count, firstname: 'Quentin', lastname: 'Giraud', date: new Date}
+    const body = {score: this.count, firstname: user.firstname, lastname: user.lastname, date: new Date}
     this.http.post('http://localhost:8080/api/taps/', body, options)
         .toPromise()
-        .then((res) => {this.router.navigate(['tap'])})
+        .then((res) => this.router.navigate(['tap']));
   }
 
   ngOnInit() {
